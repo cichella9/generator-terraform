@@ -2,7 +2,6 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-const accounts = require('./templates/accounts.json');
 const providers = require('./templates/providers.json');
 const backends = require('./templates/backends.json');
 
@@ -28,7 +27,7 @@ module.exports = class extends Generator {
         name: 'subgroups',
         message:
           'What are the logical group names for your project (separate multiple responses by comma)? ',
-        default: 'solr,zookeeper',
+        default: 'fontend,application,data,network',
         store: true,
         validate: input => input.length > 0
       },
@@ -37,7 +36,7 @@ module.exports = class extends Generator {
         name: 'environments',
         message:
           'What logical environments will you be running (separate multiple responses by comma)? ',
-        default: 'sandbox,candidate,stage,prod',
+        default: 'dev,stg,prd',
         store: true,
         validate: input => input.length > 0
       },
@@ -46,7 +45,7 @@ module.exports = class extends Generator {
         name: 'regions',
         message:
           'What regions will you be running in (separate multiple responses by comma)? ',
-        default: 'us-west-2,us-east-1',
+        default: 'eu-west-1,eu-central-1',
         store: true
       },
       {
@@ -54,7 +53,7 @@ module.exports = class extends Generator {
         name: 'components',
         message:
           'What components will you be running (separate multiple responses by comma)? ',
-        default: 'ec2,networking,lambda,s3',
+        default: 'ec2,vpc,lambda,s3',
         store: true
       },
       {
@@ -73,15 +72,22 @@ module.exports = class extends Generator {
       },
       {
         type: 'input',
-        name: 'appgroup',
-        message: 'What is your application group name? (optional) ',
+        name: 'project',
+        message: 'What the project name? (optional) ',
         default: 'search',
         store: true
       },
       {
         type: 'input',
-        name: 'businessowner',
-        message: 'Who is the business owner? (optional) ',
+        name: 'costcenter',
+        message: 'What is the Cost Center? (optional) ',
+        default: 'search',
+        store: true
+      },
+      {
+        type: 'input',
+        name: 'owner',
+        message: 'Who is the business owner or customer? (optional) ',
         store: true
       },
       {
@@ -222,12 +228,7 @@ module.exports = class extends Generator {
               `${subgroup}/${environment}/${region}/terraform.tfvars`
             ),
             {
-              environment: environment,
-              region: region,
-              appgroup: this.props.appgroup,
-              accounts: accounts,
-              environment: `${environment}`,
-              businessowner: this.props.businessowner
+              region: region
             }
           );
           this.fs.copyTpl(
@@ -271,10 +272,10 @@ module.exports = class extends Generator {
             ),
             {
               environment: environment,
-              appgroup: this.props.appgroup,
-              accounts: accounts,
+              project: this.props.project,
               environment: `${environment}`,
-              businessowner: this.props.businessowner
+              owner: this.props.owner,
+              costcenter: this.props.costcenter
             }
           );
           this.fs.copyTpl(

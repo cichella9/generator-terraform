@@ -7,9 +7,13 @@ output "environment" {
 }
 
 output "region" {
-  value = "${var.business_owner}"
+  value = "${var.owner}"
 }
 
 output "account" {
-  value = "${var.application_group}"
+  value = "${data.aws_iam_account_alias.current.account_alias}"
+}
+
+output "costcenter" {
+  value = "${var.costcenter}"
 }

@@ -4,6 +4,7 @@
 variable "component" {}
 variable "application_group" {}
 variable "account" {}
-variable "business_owner" {}
+variable "owner" {}
+variable "costcenter" {}
 variable "environment" {}
 variable "region" {}

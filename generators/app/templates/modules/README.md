@@ -3,8 +3,8 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | account |  | string | n/a | yes |
-| application\_group |  | string | n/a | yes |
-| business\_owner |  | string | n/a | yes |
+| project |  | string | n/a | yes |
+| owner |  | string | n/a | yes |
 | component |  | string | n/a | yes |
 | environment |  | string | n/a | yes |
 | region |  | string | n/a | yes |

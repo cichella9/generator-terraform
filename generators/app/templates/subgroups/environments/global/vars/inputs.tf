@@ -1,5 +1,6 @@
 variable "application_group" {}
-variable "account" {}
-variable "business_owner" {}
+variable "owner" {}
 variable "environment" {}
 variable "region" {}
+variable "costcenter" {}
+
