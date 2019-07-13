@@ -32,4 +32,4 @@ yo tf-init
 
 # Details
 
-Please find more detail about this project at (link)[https://github.com/leewallen/generator-tf-proj]
+Please find more detail about this project [here](https://github.com/leewallen/generator-tf-proj)
