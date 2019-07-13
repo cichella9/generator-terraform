@@ -1,0 +1,32 @@
+{
+  "name": "generator-tf-proj",
+  "version": "0.1.11",
+  "description": "Create a simple folder structure for use with terraform and the aws provider.",
+  "homepage": "https://github.com/leewallen/generator-tf-proj/blob/master/README.md",
+  "author": "Lee Wallen <lee@codecogntion.org> (https://github.com/leewallen/generator-tf-proj/blob/master/README.md)",
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "terraform",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "yeoman-generator": "^4.0.1",
+    "yosay": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leewallen/generator-tf-proj.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leewallen/generator-tf-proj/issues"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
