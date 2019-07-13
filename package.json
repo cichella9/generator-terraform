@@ -1,9 +1,7 @@
 {
   "name": "generator-tf-init",
   "version": "0.1.11",
-  "description": "Create a simple folder structure for use with terraform and the aws provider.",
-  "homepage": "https://github.com/leewallen/generator-tf-proj/blob/master/README.md",
-  "author": "Lee Wallen <lee@codecogntion.org> (https://github.com/leewallen/generator-tf-proj/blob/master/README.md)",
+  "description": "Initialize terraform project",
   "files": [
     "generators"
   ],
@@ -14,17 +12,17 @@
   ],
   "dependencies": {
     "chalk": "^2.1.0",
-    "generator-tf-proj": "github:ggiallo28/terraform-generator#master",
+    "generator-tf-init": "github:ggiallo28/terraform-generator#master",
     "yeoman-generator": "^4.0.1",
     "yosay": "^2.0.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leewallen/generator-tf-proj.git"
+    "url": "git+https://github.com/ggiallo28/terraform-generator"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leewallen/generator-tf-proj/issues"
+    "url": "https://github.com/ggiallo28/terraform-generator"
   },
   "devDependencies": {},
   "scripts": {
