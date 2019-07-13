@@ -10,7 +10,7 @@ module.exports = class extends Generator {
     // Have Yeoman greet the user.
     this.log(
       yosay(
-        'Welcome to the ' + chalk.green('generator-tf-proj') + ' generator!'
+        'Welcome to the ' + chalk.green('generator-terraform-init') + ' generator!'
       )
     );
 
