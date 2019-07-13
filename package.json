@@ -1,5 +1,5 @@
 {
-  "name": "generator-terraform-init",
+  "name": "generator-tf-init",
   "version": "0.1.11",
   "description": "Create a simple folder structure for use with terraform and the aws provider.",
   "homepage": "https://github.com/leewallen/generator-tf-proj/blob/master/README.md",
