@@ -213,7 +213,7 @@ module.exports = class extends Generator {
             }
           );
           this.fs.copyTpl(
-            this.templatePath('nvironments/subgroups/eregions/outputs.tf'),
+            this.templatePath('nvironments/subgroups/regions/outputs.tf'),
             this.destinationPath(
               `${environment}/${subgroup}/${region}/outputs.tf`
             ),
