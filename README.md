@@ -11,7 +11,7 @@ npm install -g yo
 Now you can install generator-tf-init.
 
 ```shell
-npm install ggiallo28/terraform-generator#master
+npm install ggiallo28/generator-terraform#master
 ```
 
 **Note**: You can also clone the project from github, and then use `npm link` in the project's root directory. The link will make it so that the terraform project generator will act like you installed it using `npm install -g generator-tf-init`.
