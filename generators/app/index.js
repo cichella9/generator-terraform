@@ -168,13 +168,13 @@ module.exports = class extends Generator {
     var components = this.props.components.split(',');
 
     // create subgroup folders
-    for (let region of regions) {
-      for (let environment of environments) {
-        for (let subgroup of subgroups) {
+    for (let environment of environments) {
+      for (let subgroup of subgroups) {
+        for (let region of regions) {
           this.fs.copyTpl(
-            this.templatePath('subgroups/environments/regions/backend.tf'),
+            this.templatePath('environments/subgroups/regions/backend.tf'),
             this.destinationPath(
-              `${subgroup}/${environment}/${region}/backend.tf`
+              `${environment}/${subgroup}/${region}/backend.tf`
             ),
             {
               provider: this.props.provider,
@@ -194,15 +194,15 @@ module.exports = class extends Generator {
             }
           );           
           this.fs.copyTpl(
-            this.templatePath('subgroups/environments/regions/inputs.tf'),
+            this.templatePath('environments/subgroups/regions/inputs.tf'),
             this.destinationPath(
-              `${subgroup}/${environment}/${region}/inputs.tf`
+              `${environment}/${subgroup}/${region}/inputs.tf`
             )
           );
           this.fs.copyTpl(
-            this.templatePath('subgroups/environments/regions/main.tf'),
+            this.templatePath('environments/subgroups/regions/main.tf'),
             this.destinationPath(
-              `${subgroup}/${environment}/${region}/main.tf`
+              `${environment}/${subgroup}/${region}/main.tf`
             ),
             {
               provider: this.props.provider,
@@ -213,9 +213,9 @@ module.exports = class extends Generator {
             }
           );
           this.fs.copyTpl(
-            this.templatePath('subgroups/environments/regions/outputs.tf'),
+            this.templatePath('nvironments/subgroups/eregions/outputs.tf'),
             this.destinationPath(
-              `${subgroup}/${environment}/${region}/outputs.tf`
+              `${environment}/${subgroup}/${region}/outputs.tf`
             ),
             {
               components: components,
@@ -223,18 +223,18 @@ module.exports = class extends Generator {
             }
           );
           this.fs.copyTpl(
-            this.templatePath('subgroups/environments/regions/terraform.tfvars'),
+            this.templatePath('environments/subgroups/regions/terraform.tfvars'),
             this.destinationPath(
-              `${subgroup}/${environment}/${region}/terraform.tfvars`
+              `${environment}/${subgroup}/${region}/terraform.tfvars`
             ),
             {
               region: region
             }
           );
           this.fs.copyTpl(
-            this.templatePath('subgroups/environments/global/vars/backend.tf'),
+            this.templatePath('environments/vars/backend.tf'),
             this.destinationPath(
-              `${subgroup}/${environment}/global/vars/backend.tf`
+              `${environment}/vars/backend.tf`
             ),
             {
               provider: this.props.provider,
@@ -254,21 +254,21 @@ module.exports = class extends Generator {
             }
           );
           this.fs.copyTpl(
-            this.templatePath('subgroups/environments/global/vars/inputs.tf'),
+            this.templatePath('environments/vars/inputs.tf'),
             this.destinationPath(
-              `${subgroup}/${environment}/global/vars/inputs.tf`
+              `${environment}/vars/inputs.tf`
             )
           );
           this.fs.copyTpl(
-            this.templatePath('subgroups/environments/global/vars/outputs.tf'),
+            this.templatePath('environments/vars/outputs.tf'),
             this.destinationPath(
-              `${subgroup}/${environment}/global/vars/outputs.tf`
+              `${environment}/vars/outputs.tf`
             )
           );
           this.fs.copyTpl(
-            this.templatePath('subgroups/environments/global/vars/terraform.tfvars'),
+            this.templatePath('environments/vars/terraform.tfvars'),
             this.destinationPath(
-              `${subgroup}/${environment}/global/vars/terraform.tfvars`
+              `${environment}/vars/terraform.tfvars`
             ),
             {
               environment: environment,
